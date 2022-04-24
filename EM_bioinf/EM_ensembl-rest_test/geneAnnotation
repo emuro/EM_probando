@@ -1,0 +1,17 @@
+import requests,sys
+
+server="https://rest.ensembl.org"
+ext="/lookup/id/ENSG00000165029?"
+
+r=requests.get(server+ext,headers={"Content-Type": "application/json"})
+
+if not r.ok:
+    r.raise_for_status()
+    sys.exit()
+
+decoded=r.json()
+geneid=repr(decoded)
+print(geneid)
+
+#output
+#{'end': 104928155, 'source': 'ensembl_havana', 'object_type': 'Gene', 'db_type': 'core', 'description': 'ATP binding cassette subfamily A member 1 [Source:HGNC Symbol;Acc:HGNC:29]', 'seq_region_name': '9', 'id': 'ENSG00000165029', 'display_name': 'ABCA1', 'logic_name': 'ensembl_havana_gene_homo_sapiens', 'strand': -1, 'version': 16, 'biotype': 'protein_coding', 'start': 104781006, 'species': 'homo_sapiens', 'assembly_name': 'GRCh38'}
