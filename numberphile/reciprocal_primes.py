@@ -33,14 +33,15 @@ def prime_numbers_up_to_max(p_max):
     return primes
 
 
-primes = prime_numbers_up_to_max(70000)
-getcontext().prec = 500
+primes = prime_numbers_up_to_max(150000)
 for i, p in enumerate(primes[3:]):
-    if p>150:
-        sys.exit()
+    getcontext().prec = 2 * p  # change dinamically the precision!
     r = str(Decimal(1)/Decimal(p))
-    m = re.search(r"^0\.(\d+?)\1+", r)
+    #m = re.search(r"^0\.(\d+?)\1+", r)
+    m = re.search(r"^0.(0*\d+?)\1+", r)
     pattern = m.group(1)
 
-    print(i, p, len(pattern), pattern, r)
-
+    if 1: # less info
+        print(i, p, len(pattern))
+    else:
+        print(i, p, 2*p, len(pattern), pattern, r)
