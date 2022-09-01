@@ -24,13 +24,14 @@ print("\nHeader by columns:\n", output, sep="")
 
 
 # An example: The first line
-for l in range(1, int(sys.argv[2])+1):
-    header  = lines[l]
-    columns = header.split("\t")
-    print("\nThe line", str(l), "by columns:\n")
-    for i, col in enumerate(columns):
-        print("[" + str(i+1) + "|" + header_cols[i] + "|" + str(col) + "]",
-              sep="")
+if int(sys.argv[2]):
+    for l in range(1, int(sys.argv[2])+1):
+        header  = lines[l]
+        columns = header.split("\t")
+        print("\nThe line", str(l), "by columns:\n")
+        for i, col in enumerate(columns):
+            print("[" + str(i+1) + "|" + header_cols[i] + "|" + str(col) + "]",
+                  sep="")
 
 
 
