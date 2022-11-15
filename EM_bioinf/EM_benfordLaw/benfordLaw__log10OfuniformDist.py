@@ -25,8 +25,8 @@ def get_last_int_digit(number):
 
 # Get integers [1, N] using a uniform distribution
 first_d = [1, 2, 3, 4, 5, 6, 7, 8, 9] # EM list(range(1,10))
-num = 500
-N   = 10**6
+num = 100
+N   = 10**10 # 10**6
 
 
 # Uniform random distribution
