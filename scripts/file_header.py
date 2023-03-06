@@ -1,11 +1,16 @@
 import sys
+import re
 
 print(sys.argv)
 
 if len(sys.argv) != 3:
-    print("\nExample of use:")
-    print("python3", sys.argv[0], "fileName", "numOfExamples")
-    print("python3", sys.argv[0], "em.tsv", str(1))
+    print("\nShow columns. Examples of use:")
+    print("# Up to the line:")
+    print("python3", sys.argv[0], "fileName", "upToTheLine")
+    print("python3", sys.argv[0], "em.tsv", "2")
+    print("# Only one line:")
+    print("python3", sys.argv[0], "fileName", "[numOfLine]")
+    print("python3", sys.argv[0], "em.tsv", "[2]")
     sys.exit()
 
 f_h = open(sys.argv[1])
@@ -23,9 +28,21 @@ for i, col in enumerate(columns):
 print("\nHeader by columns:\n", output, sep="")
 
 
-# An example: The first line
-if int(sys.argv[2]):
-    for l in range(1, int(sys.argv[2])+1):
+bool_show_only_one_line = False
+selected_line = -1
+m = re.search(r"\[(\d+)\]", sys.argv[2])
+if m:
+    bool_show_only_one_line = True 
+    selected_line = int(m.group(1))
+    up_to_line = selected_line
+else:
+    up_to_line = int(sys.argv[2])
+    
+# 
+if up_to_line:
+    for l in range(1, up_to_line+1): # Desde linea 1 a linea==sys.argv[2]
+        if bool_show_only_one_line and (l < selected_line):
+            continue
         header  = lines[l]
         columns = header.split("\t")
         print("\nThe line", str(l), "by columns:\n")
