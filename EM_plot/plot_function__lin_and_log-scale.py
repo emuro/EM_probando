@@ -11,7 +11,7 @@ plt.plot(x, y, '.', markersize=0.3, color='black', label='log')  # on the (impli
 #plt.plot(x, x**2, label='quadratic') 
 #plt.plot(x, x**3, label='cubic')
 
-if 0: # normal 
+if 1: # linear scale 
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title("Function Plot")
