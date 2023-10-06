@@ -15,7 +15,7 @@ def f(t):
 start = 0
 step  = 500
 end   = 3500 #should be 3700
-count = int (end/500) + 1
+count = int (end/step) + 1
 stop  = start + (step*count)
 t = np.linspace(start, end, count)
 t = np.append(t, [3700.])
