@@ -8,7 +8,7 @@ while True:
     if max_h<=0:
         print("El valor suministrado ha de ser un entero positivo")
     else:
-        break7
+        break
 
 results=[]
 explanation=[]
