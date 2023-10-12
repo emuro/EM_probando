@@ -29,7 +29,7 @@ plt.plot(t, f(t), '--', markersize=1, color='pink', label='log')
 plt.plot(t, f(t), '.', markersize=5, color='red', label='log')
 plt.title("Mean gene length dependence with time")
 plt.xlabel("t [Mya]")
-plt.ylabel("$L_{g}(t)$ [nt]")
+plt.ylabel("$<L_{g}(t)>$ [nt]")
 plt.show()
 
 # Puedo mostrar automaticamente la especie mas cercana a esa distancia. Mirar:
