@@ -1,4 +1,4 @@
-# gene_length_v2
+# gene_length_v2, preparing the update (new version) of the repository
 ## The emergence of eukaryotes as an evolutionary algorithmic phase transition
 
 This repository contains the data and programs needed to reproduce the results reported 
