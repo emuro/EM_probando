@@ -10,7 +10,8 @@
 .idea    
 .DS_Store
 *~
-# *~ are for emacs files
+*~ are for emacs files
+working_on_tables/
 #
 __pycache__
 *.pyc
