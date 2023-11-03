@@ -12,6 +12,7 @@
 *~
 *~ are for emacs files
 working_on_tables/
+working_on_plots/
 #
 __pycache__
 *.pyc
