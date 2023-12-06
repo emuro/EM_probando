@@ -382,9 +382,11 @@ It gets the statitistical description of the length of some model organisms that
   path: data/compressed/ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/ (Bacteria/   Eukaryota/)  
   i.e + Eukaryota/UP000005640/UP000005640_9606.fasta.gz
   
-#### Output:
+#### Outputs:  
+
 The statistical description of the protein length  
->@ results/geneLength/outputInputFiles/analysis/some_statistics/stat_description/proteins/  
+
+> @ results/geneLength/outputInputFiles/analysis/some_statistics/stat_description/proteins/  
 file: **stat_description.protein.uniprot_model_organism.tsv** (8 entries)  
 
 ----
@@ -423,8 +425,9 @@ It gets the statitistical description of the length of the reference proteomes: 
   path: data/compressed/ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/ (Bacteria/   Eukaryota/)
   * i.e + Eukaryota/UP000005640/UP000005640_9606.fasta.gz
 
-#### Output:
-The statistical description of the protein length
+#### Output:  
+The statistical description of the protein length  
+
 > file: **stat_description.protein.uniprot_reference_proteome.tsv**  
 `` @ results/geneLength/outputInputFiles/analysis/some_statistics/stat_description/proteins/  
 (also 19854 entries + header; superregnum: 330 archaea, 7997 bacteria, 1588 eukaryota, 9939 viruses = 9915 + 9939 viruses)
