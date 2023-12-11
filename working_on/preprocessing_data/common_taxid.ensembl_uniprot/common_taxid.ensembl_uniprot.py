@@ -21,6 +21,10 @@ import pandas as pd
 import glob
 import re
 
+TMP_DIR    = "/home/emuro/tmp__aldebaran/" #"/Users/enriquem.muro/tmp/"
+OUTPUT_DIR = "/home/emuro/git/github/EM_geneLength_nature/working_on_tables/"
+BOOL_OUTPUT_FILE = 0
+
 
 def df_merged_filter_numOfProtsOrGenes(df_merged, num_threshold):
     """
@@ -38,7 +42,7 @@ def df_merged_filter_numOfProtsOrGenes(df_merged, num_threshold):
          df_filtered,
              the table with the species filtered
     """
-    BOOL_SHOW_COUNTS = 0
+    BOOL_SHOW_COUNTS = 1
     if BOOL_SHOW_COUNTS:
         print("\t" + str(df_merged.shape[0]) + "\tbefore filtering")
     df_filtered = df_merged.loc[df_merged['prots_count']>num_threshold]
@@ -67,7 +71,7 @@ def df_merged_filter_diff_counts_genes_prots(df_merged,num_threshold_l,num_thres
          df_filtered,
              the table with the species filtered
     """
-    BOOL_SHOW_COUNTS = 0
+    BOOL_SHOW_COUNTS = 1
     if BOOL_SHOW_COUNTS:
         print("\t" + str(df_merged.shape[0]) + "\tbefore filtering")
     df_merged["diff_prots_genes"] = df_merged['prots_count']-df_merged['genes_count']
@@ -115,6 +119,7 @@ def df_merged_filter_ratio_length_3xprots_genes(df_merged, num_threshold):
 ensembl_taxid_file = c.OUTPUT_INPUT_FILES_PATH + c.ENSEMBL_TAXID_FILE_NAME
 df_ensembl = pd.read_csv(ensembl_taxid_file, sep="\t")
 if 0: # show the filtered ones in order
+    pd.options.display.max_columns=None
     print(df_ensembl.loc[df_ensembl['taxonomy_id'] == 8090])
     sys.exit()
 if 0:
@@ -208,7 +213,8 @@ if 0:
     print(len( pd.unique(df_ref_prot_filtered['tax_id']))) # checked: there is no redundancy
     sys.exit()
 if 0:
-    df_ref_prot_filtered.to_csv("/Users/enriquem.muro/tmp/prot.tsv", sep="\t") # for testing
+    df_ref_prot_filtered.to_csv(TMP_DIR + "/prot.tsv", sep="\t") # for testing
+    sys.exit()
 
 # Intersection applied to ensembl (taxid)
 #
@@ -231,8 +237,8 @@ if 0:
     print(dict_ensembl_filtered_species)
     sys.exit()
 if 0:
-    df_ensembl_filtered.to_csv("/Users/enriquem.muro/tmp/genes.tsv", sep="\t") # for testing
-
+    df_ensembl_filtered.to_csv(TMP_DIR + "genes.tsv", sep="\t") # for testing
+    sys.exit()
 
 # Intersection applied to ensembl (taxid)
 # df_genes_stat_desc
@@ -273,13 +279,15 @@ cond3 = cond1 & cond2
 for i, b in enumerate(cond3):
     if b:
         df_merged.loc[i, "merged_division_superregnum"] = "archaea"
-if 1:
+if 0:
     pd.options.display.max_columns=None
     print(df_merged.head(3))
     print(df_merged.shape)
     print(len(pd.unique(df_merged['tax_id']))) # checked: there is no redundancy
     sys.exit()
-
+if BOOL_OUTPUT_FILE:
+    df_merged.to_csv(OUTPUT_DIR + "stat_merged_7672.tsv", sep="\t", index=False) # for testing
+    #sys.exit()
 
 # FILTER to improve the annotation
 df_aux = df_merged.copy()
@@ -287,6 +295,7 @@ if 1:
     print(df_aux.groupby("merged_division_superregnum").count().genes_species)
     print(df_aux.groupby("merged_division_superregnum").count().genes_species.sum())
     print()
+    #sys.exit(0)
 #
 if 1:
     df_filt_ratioMean = df_merged_filter_ratio_length_3xprots_genes(df_aux, 1.0)
@@ -294,6 +303,10 @@ if 1:
     print(df_aux.groupby("merged_division_superregnum").count().genes_species)
     print(df_aux.groupby("merged_division_superregnum").count().genes_species.sum())
     print()
+if BOOL_OUTPUT_FILE:
+    df_aux.to_csv(OUTPUT_DIR + "stat_merged_6708.tsv", sep="\t", index=False) # for testing
+    #sys.exit(0)
+
 #
 if 1:
     df_filt_num = df_merged_filter_numOfProtsOrGenes(df_aux, 500)
@@ -301,6 +314,9 @@ if 1:
     print(df_aux.groupby("merged_division_superregnum").count().genes_species)
     print(df_aux.groupby("merged_division_superregnum").count().genes_species.sum())
     print()
+if BOOL_OUTPUT_FILE:
+    df_aux.to_csv(OUTPUT_DIR + "stat_merged_6685.tsv", sep="\t", index=False) # for testing
+    #sys.exit(0)    
 #
 if 1:
     df_filt_diffCount = df_merged_filter_diff_counts_genes_prots(df_aux, 0.95, 1.05)
@@ -308,7 +324,10 @@ if 1:
     print(df_aux.groupby("merged_division_superregnum").count().genes_species)
     print(df_aux.groupby("merged_division_superregnum").count().genes_species.sum())
     print()
+if BOOL_OUTPUT_FILE:
+    df_aux.to_csv(OUTPUT_DIR + "stat_merged_6521.tsv", sep="\t", index=False) # for testing
+    #sys.exit(0)    
 
 
-if 0:  # FALTA SALVAR RESULTADOS!
-    df_aux.to_csv(c.LOG_SOME_STATISTICS_TAXID_MERGED_FILE, sep="\t", index=False)
+#if 0:  # FALTA SALVAR RESULTADOS!...ya los ha salvado antes paso a paso
+    #df_aux.to_csv(c.LOG_SOME_STATISTICS_TAXID_MERGED_FILE, sep="\t", index=False)
