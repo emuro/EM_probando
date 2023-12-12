@@ -9,7 +9,7 @@
 #
 # Purpose:
 #
-# Important:
+# Important: Inititalize parameters!
 # Change:
 # ################################################################## #
 import sys
@@ -21,10 +21,22 @@ import pandas as pd
 import glob
 import re
 
+##############################################################################
+# Inititalize parameters!
+##############################################################################
+
 TMP_DIR    = "/home/emuro/tmp__aldebaran/" #"/Users/enriquem.muro/tmp/"
-OUTPUT_DIR = "/home/emuro/git/github/EM_geneLength_nature/working_on_tables/"
+OUTPUT_DIR = "/home/emuro/git/github/EM_geneLength_nature/working_on_tables/noisy/"
 BOOL_OUTPUT_FILE = 0
 
+##############################################################################
+
+
+
+
+###########
+# Functions
+###########
 
 def df_merged_filter_numOfProtsOrGenes(df_merged, num_threshold):
     """
@@ -113,6 +125,10 @@ def df_merged_filter_ratio_length_3xprots_genes(df_merged, num_threshold):
     return  df_filtered
 
 
+
+###########
+# Main code
+###########
 
 # Genes (Ensembl): taxid
 #
@@ -279,6 +295,12 @@ cond3 = cond1 & cond2
 for i, b in enumerate(cond3):
     if b:
         df_merged.loc[i, "merged_division_superregnum"] = "archaea"
+
+        
+# eliminate the viruses, because we do not work with them
+df_merged = df_merged.drop(
+    df_merged[df_merged["merged_division_superregnum"] == "viruses"].index
+)
 if 0:
     pd.options.display.max_columns=None
     print(df_merged.head(3))
@@ -286,8 +308,9 @@ if 0:
     print(len(pd.unique(df_merged['tax_id']))) # checked: there is no redundancy
     sys.exit()
 if BOOL_OUTPUT_FILE:
-    df_merged.to_csv(OUTPUT_DIR + "stat_merged_7672.tsv", sep="\t", index=False) # for testing
+    df_merged.to_csv(OUTPUT_DIR + "stat_merged_7671.tsv", sep="\t", index=False) # for testing
     #sys.exit()
+
 
 # FILTER to improve the annotation
 df_aux = df_merged.copy()
@@ -304,7 +327,7 @@ if 1:
     print(df_aux.groupby("merged_division_superregnum").count().genes_species.sum())
     print()
 if BOOL_OUTPUT_FILE:
-    df_aux.to_csv(OUTPUT_DIR + "stat_merged_6708.tsv", sep="\t", index=False) # for testing
+    df_aux.to_csv(OUTPUT_DIR + "stat_merged_6707.tsv", sep="\t", index=False) # for testing
     #sys.exit(0)
 
 #
