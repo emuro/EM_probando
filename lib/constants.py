@@ -47,6 +47,8 @@ COLOR_FOR_DIST = {
 
 ORG_GROUPS       = ["bacteria", "archaea","protists", "plants", "fungi",
                     "invertebrates", "vertebrates"]
+#OLD_COLOR_ORG_GROUPS    = ['#D83B01', '#002050', '#A80000', '#FFA500', '#107C10',
+#                           '#EF008C', '#0078D7', '#B4009E']
 OLD_COLOR_ORG_GROUPS    = ['#D83B01', '#002050', '#A80000', '#FFA500', '#107C10',
                            '#EF008C', '#0078D7', '#B4009E']
 # article colors
