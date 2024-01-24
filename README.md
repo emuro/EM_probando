@@ -68,7 +68,7 @@ that we calculated can be accessed from our server:
 
 ---
 ### main_tables
-The files for protein coding genes, proteins, and the intersection set between them (merged) are provided in standard 0[tab-separated values](https://en.wikipedia.org/wiki/Tab-separated_values) (*.tsv):
+The files for protein coding genes, proteins, and the intersection set between them (merged) are provided in standard [tab-separated values](https://en.wikipedia.org/wiki/Tab-separated_values) (*.tsv):
 - stat_protCodGenes.tsv (one header line + 33,627 entries)
 - stat_proteins.tsv (one header line + 9,913 entries)
 - stat_merged (one header line + 6,519 entries)  
