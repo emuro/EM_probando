@@ -32,8 +32,7 @@ our_mnt_dir is the local directory where the data were downloaded.
 
 #### Protein coding genes 
 The gene annotations were obtained from different Ensembl's webservers 
-for [prokaryotes (archaea, bacteria)](https://bacteria.ensembl.org), [protists](https://protists.ensembl.org), [plants](https://plants.ensembl.org), [fungi](https://fungi.ensembl.org), [metazoa](https://metazoa.ensembl.org), 
-[vertebrates](https://www.ensembl.org).  
+for [prokaryotes (archaea, bacteria)](https://bacteria.ensembl.org), [protists](https://protists.ensembl.org), [plants](https://plants.ensembl.org). Then, the categorization in groups of organisms is already established by Ensembl. 
 
 
 | Ensembl ftp site by Kingdom/division                                          | Release            |  
