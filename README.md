@@ -15,8 +15,8 @@ in our article: how to obtain the annotations from public repositories, main tab
 ### Data: the annotations were downloaded from the next public repositories:
 
 #### Proteins
-[Reference proteomes](https://www.uniprot.org/proteomes/?query=*&fil=reference%3Ayes)
-Downloaded from [Uniprot](https://www.uniprot.org/). 
+The [Reference proteomes](https://www.uniprot.org/proteomes/?query=*&fil=reference%3Ayes)
+were downloaded from [Uniprot](https://www.uniprot.org/). 
 Each proteome has a unique Uniprot-identifier (UPID). Also, 
 a [description](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
 of the proteomes, as well as a [table](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
