@@ -17,13 +17,10 @@ in our article: how to obtain the annotations from public repositories, main tab
 #### Proteins
 The [reference proteomes](https://www.uniprot.org/proteomes/?query=*&fil=reference%3Ayes)
 were downloaded from [Uniprot](https://www.uniprot.org/). 
-Each proteome has a unique Uniprot-identifier (UPID). Also, 
-a [description](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
-of the proteomes, as well as a [table](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
-associating UPIDs, taxonomy_ids, species names, etc is available at Uniprot.
+Each proteome has a unique Uniprot-identifier (UPID). Here, there is a [description](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
+of the proteomes, within the link, there is a table associating UPIDs, taxonomy_ids, species names, etc.
 
-The reference proteomes for the different taxonomical divisions provided by Ensembl (Viruses were not considered) were downloaded from 
-[Uniprot FTP repository](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/) on 28.5.2021. 
+The reference proteomes for the different taxonomical divisions provided by Ensembl (Viruses were not considered) were downloaded from [Uniprot FTP repository](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/) on 28.5.2021. 
 For each species, a fasta file containing its reference proteome was downloaded. 
 The directory structure of the FTP repository was preserved.   
 For instance, for _Homo sapiens_ (UPID: UP000005640 and taxonomy id:9606): 
