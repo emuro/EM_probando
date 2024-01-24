@@ -7,16 +7,16 @@ in our article: how to obtain the annotations from public repositories, main tab
 **The structure of this repository is the next:**  
  - **README.md** guides you all over this repository
  - **main_tables** needed to reproduce the main results  
-         - **extra_tables** for the supplementary material and extra information that can be quite helpful (ie. taxonomical ids)
- - **main_work** containing the software needed to reproduce the main results of our work is   
+         - **extra_tables** for the supplementary material and extra information that can be helpful (ie. taxonomical ids)  
+ - **main_work** contains the software needed to reproduce the main results of our work  
          - **main_suppl**, where the programs for the supplementary material are.
 
 ---
-### Data: the annotations were downloaded from public repositories:
+### Data: the annotations were downloaded from the next public repositories:
 
 #### Proteins
 [Reference proteomes](https://www.uniprot.org/proteomes/?query=*&fil=reference%3Ayes)
-were downloaded from [Uniprot](https://www.uniprot.org/). 
+Downloaded from [Uniprot](https://www.uniprot.org/). 
 Each proteome has a unique Uniprot-identifier (UPID). Also, 
 a [description](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
 of the proteomes, as well as a [table](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
