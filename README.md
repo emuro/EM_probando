@@ -74,23 +74,26 @@ The files for protein coding genes, proteins, and the intersection set between t
 - stat_merged (one header line + 6,519 entries)  
 
 Mean gene length vs. rho (fraction of nCDS within the protein coding genes). The entries are ordered by ascending mean gene length:  
-- rho_vs_gene.dat 
+- rho_vs_gene.dat (three header lines + 6,519 entries)  
 
-#### **Number of entries per taxonomical division:**  
-stat_protCodGenes.tsv (one header line + 33,627 entries):
+#### **Number of entries per taxonomical division:**
+stat_protCodGenes.tsv (one header line + 33,627 entries):  
+
 | counts | regnum               |  
 |-----:  |:----------           |
 | 31943  | bacteria<sup>*</sup> |
-| 237    | protists    |
-| 96     | plants      |
-| 1014   | fungi       |
-| 115    | metazoa     |
-| 222    | vertebrates |
+| 237    | protists             |
+| 96     | plants               |
+| 1014   | fungi                |
+| 115    | metazoa              |
+| 222    | vertebrates          |
 33627 entries in total  
 
 <sup>*</sup>In the annotation from Ensembl Bacteria includes also Archaea.
 
-stat_proteins.tsv (one header line + 9,913 entries):
+
+stat_proteins.tsv (one header line + 9,913 entries):  
+
 | counts | regnum |  
 |-----:|:-------- |
 | 330  | archaea  |
@@ -100,7 +103,9 @@ stat_proteins.tsv (one header line + 9,913 entries):
 
 <sup>*</sup>In the annotations from Uniprot, Eukaryota includes all the clades described above: protists, plants, fungi, metazoa, vertebrates.  
 
-stat_merged.tsv (one header line + 6,519 entries):
+
+stat_merged.tsv (one header line + 6,519 entries):  
+
 | counts | regnum      |  
 |-----:  |:----------  |
 | 5695   | bacteria    |
