@@ -89,19 +89,20 @@ stat_protCodGenes.tsv (one header line + 33,627 entries):
 | 222    | vertebrates          |
 33627 entries in total  
 
-<sup>*</sup>In the annotation from Ensembl Bacteria includes also Archaea.
+<sup>*</sup>In the annotation from Ensembl Bacteria includes also Archaea.  
+Also note that Animalia is divided in metazoa and vertebrates.
 
 
 stat_proteins.tsv (one header line + 9,913 entries):  
 
-| counts | regnum |  
+| counts | domain |  
 |-----:|:-------- |
 | 330  | archaea  |
 | 7997 | bacteria |
 | 1586 | eukaryota<sup>*</sup> |
 9913 entries in total
 
-<sup>*</sup>In the annotations from Uniprot, Eukaryota includes all the clades described above: protists, plants, fungi, metazoa, vertebrates.  
+<sup>*</sup>In the annotations from Uniprot, eukaryota includes: protists, plants, fungi, metazoa, vertebrates.  
 
 
 stat_merged.tsv (one header line + 6,519 entries):  
@@ -118,7 +119,7 @@ stat_merged.tsv (one header line + 6,519 entries):
 
 #### extra_tables
 - species_Ensembl.tsv. For each division, the file containing the taxonomy ids of the different species annotated in Ensembl, [see above](./README.md#taxonomy-ids-of-the-different-species-annotated-in-ensembl), has been downloaded. The files for the different divisions have been concatenated into species_Ensembl.tsv, maintaining only the first header. Finally the file has been slimmed-down reducing its columns to cols 1, 2, and 4; that is, colloquial name of the species, species name, and taxonomy_id.  
-- genes.xlsx, proteins.xlsx, and genes_proteins_combined.xlsx. The main_tables in Microsoft Excel format, for the sake of those that prefer this software. From these tables, the main results can be reproduced.  
+- genes.xlsx, proteins.xlsx, and genes_proteins_combined.xlsx. The main_tables in Microsoft Excel format, for the sake of those that use MS formats.  
 - 480lognormal.dat. Initial seed for the gene growth model: 5000 gene lognormally distributed with mean 480
 - clade_fraction_per_mean_length.xlsx data to represent Figs. S8 and S9
 - Homo_sapiens_CDS_nCDS.xlsx data needed to compare the length frequency distribution for coding (CDS) and non-coding (nCDS) genetic sequences, see Fig. S10
