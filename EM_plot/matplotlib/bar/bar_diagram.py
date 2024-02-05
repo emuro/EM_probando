@@ -8,7 +8,7 @@ file_name = "./tree_age.tsv"
 data = pd.read_csv(file_name, sep="\t")
 print(data.columns)
 print(data)
-data["Baumart"] = data["Baumart"].astype("category")
+#data["Baumart"] = data["Baumart"].astype("category")
 print(data.dtypes)
 
 
