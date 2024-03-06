@@ -1,29 +1,21 @@
-# gene_length_v2, preparing the update (new version) of the repository
-## The emergence of eukaryotes as an evolutionary algorithmic phase transition
+# The emergence of eukaryotes as an evolutionary algorithmic phase transition
 
-This repository contains the data and programs needed to reproduce the results reported 
-in our article: how to obtain the annotations from public repositories, main tables and programs.  
+This repository contains the data and programs needed to reproduce the results reported in our article. Here, it is also described how to obtain the annotations from public repositories.  
 
 **The structure of this repository is the next:**  
- - **README.md** guides you all over this repository
- - **main_tables** needed to reproduce the main results  
-         - **extra_tables** for the supplementary material and extra information that can be helpful (ie. taxonomical ids)  
- - **main_work** contains the software needed to reproduce the main results of our work  
+ - **README.md** guides you all over this repository.
+ - **main_tables** that are needed to reproduce the main figures.  
+         - **extra_tables** for the supplementary material and some extra data that can be helpful (ie. taxonomical ids).  
+ - **main_work** contains the programs needed to reproduce the main results.  
          - **main_suppl**, where the programs for the supplementary material are.
 
 ---
-### Data: the annotations were downloaded from the next public repositories:
+### Data: the annotations were downloaded from public repositories
 
 #### Proteins
-The [reference proteomes](https://www.uniprot.org/proteomes/?query=*&fil=reference%3Ayes)
-were downloaded from [Uniprot](https://www.uniprot.org/). 
-Each proteome has a unique Uniprot-identifier (UPID). Here, there is a [description](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) 
-of the proteomes, within the link, there is a table associating UPIDs, taxonomy_ids, species names, etc.
+The [reference proteomes](https://www.uniprot.org/proteomes/?query=*&fil=reference%3Ayes) were downloaded from the Universal Protein Resource ([Uniprot](https://www.uniprot.org/)). Each proteome has a unique Uniprot-identifier (UPID). A [description](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) of the proteomes is also provided. It contains a table with information on every proteome: UPIDs, taxonomy_ids, species names, etc. All the reference proteomes were downloaded from [Uniprot FTP repository](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/) on 28.5.2021. Note that viruses were not downloaded and that Uniprot is updated regularly, every eight weeks.  
 
-The reference proteomes for the different taxonomical divisions provided by Ensembl (Viruses were not considered) were downloaded from [Uniprot FTP repository](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/) on 28.5.2021. 
-For each species, a fasta file containing its reference proteome was downloaded. 
-The directory structure of the FTP repository was preserved.   
-For instance, for _Homo sapiens_ (UPID: UP000005640 and taxonomy id:9606): 
+Then, for each species a fasta file containing its reference proteome was downloaded, preserving the directory structure of the repository. For instance, for _Homo sapiens_ (UPID: UP000005640 and taxonomy id:9606): 
 ```
 UP000005640_9606.fasta.gz @
 our_mnt_dir + /data/compressed/ + "ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/"
@@ -31,8 +23,7 @@ our_mnt_dir + /data/compressed/ + "ftp.uniprot.org/pub/databases/uniprot/current
 our_mnt_dir is the local directory where the data were downloaded.
 
 #### Protein coding genes 
-The gene annotations were obtained from different Ensembl's webservers 
-for [prokaryotes (archaea, bacteria)](https://bacteria.ensembl.org), [protists](https://protists.ensembl.org), [plants](https://plants.ensembl.org). Then, the categorization in groups of organisms is already established by Ensembl. 
+The gene annotations were obtained from different webservers provided by Ensembl: [prokaryotes (archaea, bacteria)](https://bacteria.ensembl.org), [protists](https://protists.ensembl.org), [plants](https://plants.ensembl.org), [fungi](http://fungi.ensembl.org/), [metazoa (invertebrates)](https://metazoa.ensembl.org), [vertebrates](https://ensembl.org/index.html). Then, any paraphyletic categorization in groups of organisms is already established by Ensembl. 
 
 
 | Ensembl ftp site by Kingdom/division                                          | Release            |  
@@ -41,17 +32,15 @@ for [prokaryotes (archaea, bacteria)](https://bacteria.ensembl.org), [protists](
 | [protists](http://ftp.ensemblgenomes.org/pub/protists/)                       | ensemblgenomes 49  |  
 | [plants](http://ftp.ensemblgenomes.org/pub/plants/)                           | ensemblgenomes 49  |  
 | [fungi](http://ftp.ensemblgenomes.org/pub/fungi/)                             | ensemblgenomes 49  |  
-| [metazoa](http://ftp.ensemblgenomes.org/pub/metazoa/)                         | ensemblgenomes 49  |  
+| [metazoa (invertebrates)](http://ftp.ensemblgenomes.org/pub/metazoa/)                         | ensemblgenomes 49  |  
 | [vertebrates](https://ftp.ensembl.org/pub/)                                   | ensembl 98         |  
 
-The gzip compressed *.gtf.gz (General Transfer Format) gene annotation files were downloaded 
-for the different species preserving the directories' structure of the FTP Ensembl 
-repositories. For instance, for _Homo sapiens_: 
+The gzip compressed *.gtf.gz (General Transfer Format) gene annotation files were downloaded for the different species preserving the structure of the directories (FTP Ensembl repositories). For instance, for _Homo sapiens_: 
 ```
 Homo_sapiens.GRCh38.98.gtf.gz @
 our_mnt_dir + data/compressed/ + "ftp.ensembl.org/pub/release-98/gtf/homo_sapiens/"
 ```
-our_mnt_dir is, as above, the local directory where the data were downloaded.
+our_mnt_dir is, as above, the local directory where all the data were downloaded.
 
 ##### Taxonomy ids of the different species annotated in Ensembl
 The taxonomy id of each species has been downloaded from Ensembl for each division: https://ftp.ensembl.org/pub/release-98/species_EnsemblVertebrates.txt
@@ -62,8 +51,7 @@ The taxonomy id of each species has been downloaded from Ensembl for each divisi
 
 ---
 #### The lengths for protein coding genes and proteins
-that we calculated can be accessed from our server: 
-
+can be accessed from our server:  
 [https://genford.uv.es:5001/sharing/P79EcUfhE](https://genford.uv.es:5001/sharing/P79EcUfhE)
 
 ---
