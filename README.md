@@ -43,15 +43,11 @@ our_mnt_dir + data/compressed/ + "ftp.ensembl.org/pub/release-98/gtf/homo_sapien
 our_mnt_dir is, as above, the local directory where all the data were downloaded.
 
 ##### Taxonomy ids of the different species annotated in Ensembl
-The taxonomy id of each species has been downloaded from Ensembl for each division: https://ftp.ensembl.org/pub/release-98/species_EnsemblVertebrates.txt
-[prokaryotes (archaea, bacteria)](http://ftp.ensemblgenomes.org/pub/bacteria/release-49/species_EnsemblBacteria.txt),
-[protists](http://ftp.ensemblgenomes.org/pub/protists/release-49/species_EnsemblProtists.txt), [plants](http://ftp.ensemblgenomes.org/pub/plants/release-49/species_EnsemblPlants.txt),
-[fungi](http://ftp.ensemblgenomes.org/pub/fungi/release-49/species_EnsemblFungi.txt), [metazoa](http://ftp.ensemblgenomes.org/pub/metazoa/release-49/species_EnsemblMetazoa.txt), 
-[vertebrates](https://ftp.ensembl.org/pub/release-98/species_EnsemblVertebrates.txt).  
+The taxonomy id of each species has been downloaded from Ensembl for each division: [prokaryotes (archaea, bacteria)](http://ftp.ensemblgenomes.org/pub/bacteria/release-49/species_EnsemblBacteria.txt), [protists](http://ftp.ensemblgenomes.org/pub/protists/release-49/species_EnsemblProtists.txt), [plants](http://ftp.ensemblgenomes.org/pub/plants/release-49/species_EnsemblPlants.txt), [fungi](http://ftp.ensemblgenomes.org/pub/fungi/release-49/species_EnsemblFungi.txt), [metazoa (invertebrates)](http://ftp.ensemblgenomes.org/pub/metazoa/release-49/species_EnsemblMetazoa.txt), [vertebrates](https://ftp.ensembl.org/pub/release-98/species_EnsemblVertebrates.txt).  
 
 ---
 #### The lengths for protein coding genes and proteins
-can be accessed from our server:  
+The lengths, for any gene or protein, for all the species can be accessed from our server:   
 [https://genford.uv.es:5001/sharing/P79EcUfhE](https://genford.uv.es:5001/sharing/P79EcUfhE)
 
 ---
