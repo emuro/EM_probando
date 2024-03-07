@@ -53,31 +53,29 @@ The lengths, for any gene or protein, for all the species can be accessed from o
 ---
 ### main_tables
 The files for protein coding genes, proteins, and the intersection set between them (merged) are provided in standard [tab-separated values](https://en.wikipedia.org/wiki/Tab-separated_values) (*.tsv):
-- stat_protCodGenes.tsv (one header line + 33,627 entries)
-- stat_proteins.tsv (one header line + 9,913 entries)
-- stat_merged (one header line + 6,519 entries)  
+- stat_protCodGenes.tsv (header line + 33627 entries).  
+- stat_proteins.tsv (header line + 9913 entries).  
+- stat_merged (header line + 6519 entries).  
 
-Mean gene length vs. rho (fraction of nCDS within the protein coding genes). The entries are ordered by ascending mean gene length:  
-- rho_vs_gene.dat (three header lines + 6,519 entries)  
+Also, a file for the merged set with the mean gene length vs. rho (fraction of nCDS within the protein coding genes). The entries are ordered by ascending mean gene length:  
+- rho_vs_gene.dat (three header lines + 6519 entries).
 
 #### **Number of entries per taxonomical division:**
-stat_protCodGenes.tsv (one header line + 33,627 entries):  
+stat_protCodGenes.tsv (header line + 33627 entries):  
 
-| counts | regnum               |  
-|-----:  |:----------           |
-| 31943  | bacteria<sup>*</sup> |
-| 237    | protists             |
-| 96     | plants               |
-| 1014   | fungi                |
-| 115    | metazoa              |
-| 222    | vertebrates          |
+| counts | regnum                       |  
+|-----:  |:----------                   |
+| 31943  | bacteria<sup>*</sup>         |
+| 237    | protists                     |
+| 96     | plants                       |
+| 1014   | fungi                        |
+| 115    | metazoa (invertebrates)      |
+| 222    | vertebrates                  |
 33627 entries in total  
 
-<sup>*</sup>In the annotation from Ensembl Bacteria includes also Archaea.  
-Also note that Animalia is divided in metazoa and vertebrates.
+<sup>*</sup>Note that Ensembl Bacteria is a browser for bacterial and archaeal genomes. Then, the 31943 entries are divided, using the taxonomy classification, in 30714 Bacteria and 1229 Archaea.  
 
-
-stat_proteins.tsv (one header line + 9,913 entries):  
+stat_proteins.tsv (header line + 9,913 entries):  
 
 | counts | domain |  
 |-----:|:-------- |
@@ -86,23 +84,23 @@ stat_proteins.tsv (one header line + 9,913 entries):
 | 1586 | eukaryota<sup>*</sup> |
 9913 entries in total
 
-<sup>*</sup>In the annotations from Uniprot, eukaryota includes: protists, plants, fungi, metazoa, vertebrates.  
+<sup>*</sup>In the annotations from Uniprot, eukaryota includes: protists (156), plants (184), fungi (772), invertebrates (226), vertebrates (248). That is, the 1586 eukaryota has been classified using the taxonomy. Moreover, we validated that the last 156 species were protists, but protists is not a taxon, then we double-checked that Ensembl had them classified as protists too. 
 
-
-stat_merged.tsv (one header line + 6,519 entries):  
+stat_merged.tsv (header line + 6519 entries):  
 
 | counts | regnum      |  
 |-----:  |:----------  |
-| 5695   | bacteria    |
+| 5468   | bacteria    |
+| 227    | archaea     |
 | 91     | protists    |
 | 59     | plants      |
 | 533    | fungi       |
-| 49     | metazoa     |
+| 49     | metazoa (invertebrates) |
 | 92     | vertebrates |
 6519 entries in total  
 
 #### extra_tables
-- species_Ensembl.tsv. For each division, the file containing the taxonomy ids of the different species annotated in Ensembl, [see above](./README.md#taxonomy-ids-of-the-different-species-annotated-in-ensembl), has been downloaded. The files for the different divisions have been concatenated into species_Ensembl.tsv, maintaining only the first header. Finally the file has been slimmed-down reducing its columns to cols 1, 2, and 4; that is, colloquial name of the species, species name, and taxonomy_id.  
+- species_Ensembl.tsv. The file contains the taxonomy ids of the different species annotated in Ensembl; [see above](./README.md#taxonomy-ids-of-the-different-species-annotated-in-ensembl) where the data have been obtained from: the files for the different divisions have been concatenated into species_Ensembl.tsv, maintaining only the first header. Finally, the file has been slimmed-down reducing its columns to species, species name and taxonomy_id.  
 - genes.xlsx, proteins.xlsx, and genes_proteins_combined.xlsx. The main_tables in Microsoft Excel format, for the sake of those that use MS formats.  
 - 480lognormal.dat. Initial seed for the gene growth model: 5000 gene lognormally distributed with mean 480
 - clade_fraction_per_mean_length.xlsx data to represent Figs. S8 and S9
