@@ -7,7 +7,7 @@
 # ------------------------------------------------------------------------
 # Project: gene_length
 #
-# Purpose: Constants used in the project
+# Purpose: constants used in the project
 # ################################################################## #
 
 import os
@@ -42,7 +42,9 @@ G_NCBI_GENOME_DATA_FILE       = EXTRA_TABLES_PATH + "stat_protCodGenes_with_ncbi
 WRONG_ANNOTATIONS_MERGED_FILE = EXTRA_TABLES_PATH + "noisy_stat_merged.tsv"
 
 
-
+######## 
+# COLORS
+######## colors start
 COLOR_FOR_DIST = {
     "genes":    matplotlib.colors.to_hex("#76bdfb", keep_alpha=False),
     "proteins": matplotlib.colors.to_hex("#ffab98", keep_alpha=False)
@@ -73,14 +75,11 @@ if BOOL_USE_ARTICLE_COLORS:
         "plants": '#385723',
         "invertebrates": '#9664A0', "vertebrates": '#C00000'  #, '#B4009E'
     }
-
-    
+ 
 COLOR_ORG_GROUPS = []
 for g in COLOR_OF:
     COLOR_ORG_GROUPS.append(COLOR_OF[g])
-
-
-
+################################# colors end
 
     
 ################################# alpha start    

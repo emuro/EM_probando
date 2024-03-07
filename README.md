@@ -108,10 +108,10 @@ stat_merged.tsv (header line + 6519 entries):
 
 ---
 ### main_work
-- [protCodGenes_lognormDist.ipynb](./main_work/protCodGenes_lognormDist.ipynb) and [proteins_lognormDist.ipynb](./main_work/proteins_lognormDist.ipynb): the distributions of the lengths of the protein coding genes and proteins, respectively. That is Fig.1 (also S1, S2, and S7)  
-- [protCodGenes_taylorLaw.ipynb](./main_work/protCodGenes_taylorLaw.ipynb) and [proteins_taylorLaw.ipynb](./main_work/proteins_taylorLaw.ipynb): the observed Taylor law in the distributions of lengths for the different species (variance vs mean in $log_{10}$ representation). That is, Fig. 2  
-- [relation_proteins_protCodGenes_lengths.ipynb](./main_work/relation_proteins_protCodGenes_lengths.ipynb). Threshold in the relationship between mean protein and protein coding gene lengths for the different species for which we have records in both proteins and protein coding genes. See Fig. 3. 
-- [rho_nCDS_within_protCodGenes_lengths.ipynb](./main_work/rho_nCDS_within_protCodGenes_lengths.ipynb). Second-order phase transition in the density of non-coding sequences within protein coding genes. Each dot represents a single species for which we have records in both proteins and protein coding genes, see Fig. 4 
+- [protCodGenes_lognormDist.ipynb](./main_work/protCodGenes_lognormDist.ipynb) and [proteins_lognormDist.ipynb](./main_work/proteins_lognormDist.ipynb): the distributions of the lengths of the protein coding genes and proteins respectively. That is Fig.1 (also S1, S2, and S7)  
+- [protCodGenes_taylorLaw.ipynb](./main_work/protCodGenes_taylorLaw.ipynb) and [proteins_taylorLaw.ipynb](./main_work/proteins_taylorLaw.ipynb): the observed Taylor law in the distributions of lengths for the different species (variance vs mean in $log_{10}$ representation) for both protein coding genes and proteins. That is, Fig. 2  
+- [relation_proteins_protCodGenes_lengths.ipynb](./main_work/relation_proteins_protCodGenes_lengths.ipynb). Threshold in the relationship between the mean protein coding gene and the mean protein length. Each dot represents a single species for which we have records in both protein coding genes and proteins, see Fig. 3. 
+- [rho_nCDS_within_protCodGenes_lengths.ipynb](./main_work/rho_nCDS_within_protCodGenes_lengths.ipynb). Second-order phase transition in the density of non-coding sequences within protein coding genes, the mean length is the control parameter. See Fig. 4. 
 - allowed_states.f. It calculates the allowed states of Fig. 4.
  
 #### suppl_work  
