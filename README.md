@@ -23,7 +23,7 @@ our_mnt_dir + /data/compressed/ + "ftp.uniprot.org/pub/databases/uniprot/current
 our_mnt_dir is the local directory where the data were downloaded.
 
 #### Protein coding genes 
-The gene annotations were obtained from different webservers provided by Ensembl: [prokaryotes (archaea, bacteria)](https://bacteria.ensembl.org), [protists](https://protists.ensembl.org), [plants](https://plants.ensembl.org), [fungi](http://fungi.ensembl.org/), [metazoa (invertebrates)](https://metazoa.ensembl.org), [vertebrates](https://ensembl.org/index.html). Then, any paraphyletic categorization in groups of organisms is already established by Ensembl. 
+The protein coding gene annotations were obtained from different webservers provided by Ensembl: [prokaryotes (archaea, bacteria)](https://bacteria.ensembl.org), [protists](https://protists.ensembl.org), [plants](https://plants.ensembl.org), [fungi](http://fungi.ensembl.org/), [metazoa (invertebrates)](https://metazoa.ensembl.org), [vertebrates](https://ensembl.org/index.html). Then, any paraphyletic categorization in groups of organisms is already established by Ensembl. 
 
 
 | Ensembl ftp site by Kingdom/division                                          | Release            |  
@@ -46,8 +46,8 @@ our_mnt_dir is, as above, the local directory where all the data were downloaded
 The taxonomy id of each species has been downloaded from Ensembl for each division: [prokaryotes (archaea, bacteria)](http://ftp.ensemblgenomes.org/pub/bacteria/release-49/species_EnsemblBacteria.txt), [protists](http://ftp.ensemblgenomes.org/pub/protists/release-49/species_EnsemblProtists.txt), [plants](http://ftp.ensemblgenomes.org/pub/plants/release-49/species_EnsemblPlants.txt), [fungi](http://ftp.ensemblgenomes.org/pub/fungi/release-49/species_EnsemblFungi.txt), [metazoa (invertebrates)](http://ftp.ensemblgenomes.org/pub/metazoa/release-49/species_EnsemblMetazoa.txt), [vertebrates](https://ftp.ensembl.org/pub/release-98/species_EnsemblVertebrates.txt).  
 
 ---
-#### The lengths for protein coding genes and proteins
-The lengths, for any gene or protein, for all the species can be accessed from our server:   
+#### The lengths of protein coding genes and proteins
+The length of any protein coding gene or protein for all the used species can be accessed from our server:   
 [https://genford.uv.es:5001/sharing/P79EcUfhE](https://genford.uv.es:5001/sharing/P79EcUfhE)
 
 ---
@@ -108,14 +108,14 @@ stat_merged.tsv (header line + 6519 entries):
 
 ---
 ### main_work
-- [protCodGenes_lognormDist.ipynb](./main_work/protCodGenes_lognormDist.ipynb) and [proteins_lognormDist.ipynb](./main_work/proteins_lognormDist.ipynb): the distributions of the lengths of the protein coding genes and proteins respectively. That is Fig.1 (also S1, S2, and S7)  
-- [protCodGenes_taylorLaw.ipynb](./main_work/protCodGenes_taylorLaw.ipynb) and [proteins_taylorLaw.ipynb](./main_work/proteins_taylorLaw.ipynb): the observed Taylor law in the distributions of lengths for the different species (variance vs mean in $log_{10}$ representation) for both protein coding genes and proteins. That is, Fig. 2  
-- [relation_proteins_protCodGenes_lengths.ipynb](./main_work/relation_proteins_protCodGenes_lengths.ipynb). Threshold in the relationship between the mean protein coding gene and the mean protein length. Each dot represents a single species for which we have records in both protein coding genes and proteins, see Fig. 3. 
-- [rho_nCDS_within_protCodGenes_lengths.ipynb](./main_work/rho_nCDS_within_protCodGenes_lengths.ipynb). Second-order phase transition in the density of non-coding sequences within protein coding genes, the mean length is the control parameter. See Fig. 4. 
+- [protCodGenes_lognormDist.ipynb](./main_work/protCodGenes_lognormDist.ipynb) and [proteins_lognormDist.ipynb](./main_work/proteins_lognormDist.ipynb): the distributions of the lengths of the protein coding genes (genes hereafter) and proteins respectively. See Fig.1, also S1, S2, and S7.  
+- [protCodGenes_taylorLaw.ipynb](./main_work/protCodGenes_taylorLaw.ipynb) and [proteins_taylorLaw.ipynb](./main_work/proteins_taylorLaw.ipynb): the observed Taylor law in the distributions of the lengths of genes and proteins (variance vs mean in $log_{10}$ representation) for the different species. See Fig. 2.  
+- [relation_proteins_protCodGenes_lengths.ipynb](./main_work/relation_proteins_protCodGenes_lengths.ipynb): threshold in the relationship between the mean gene length and the mean protein length for the different species. See Fig. 3.   
+- [rho_nCDS_within_protCodGenes_lengths.ipynb](./main_work/rho_nCDS_within_protCodGenes_lengths.ipynb). Second-order phase transition in the density ($\rho$) of non-coding sequences within protein coding genes with the mean gene length as control parameter. See Fig. 4. 
 - allowed_states.f. It calculates the allowed states of Fig. 4.
  
 #### suppl_work  
-- merged_taylorLaw.ipynb. The observed Taylor law in the merged set, for the different species for which we have records in both proteins and protein coding genes (variance vs mean in $log_{10}$ representation). This is an extension of Fig. 2.  
+- merged_taylorLaw.ipynb. The observed Taylor law in the merged set for the different species for which we have records in both proteins and protein coding genes (variance vs mean in $log_{10}$ representation). This is an extension of Fig. 2.  
 - reliability_fit.ipynb: calculates the log-likelihood that fits the different distributions compared in the figures. See, Figs. S3 and Fig. S4  
 - gene_growth_simulator.f for the sake of Fig. S5 and Fig. S10  
 - entropy.f: calculates the entropy of the allowed states of the unitary density on non-coding genetic sequences. See, Fig. S12  
