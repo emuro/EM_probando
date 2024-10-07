@@ -11,13 +11,13 @@ plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
 def Tau(l):
-   mu = 100101
-   L0 = 554
-   return np.log(l/L0) /((mu - 1)*l) 
+   k = 0.0013561601380
+   L0 = 452
+   return np.log(l/L0) /(k*l)   #452 * np.exp(k * (3700-t))
 
 
-start = 554
-step  = 500
+start = 452
+step  = 100
 end   = 68000  #human
 count = int (end/step) + 1
 stop  = start + (step*count)
@@ -31,14 +31,14 @@ display(df)
 
 plt.plot(l, Tau(l), '--', markersize=1, color='gray', label='log')
 plt.plot(l, Tau(l), '.', markersize=3, color='red', label='log')
-plt.title("Algorithmic complexity dependance with the mean gene length")
-plt.xlabel("<L> [nt]")
-plt.ylabel("Tau(<L>) [Mya/nt]")
+plt.title("Characteristic time dependance with Mean gene length")
+plt.xlabel("l [nt]")
+plt.ylabel("Tau$(L_{g})$ [Mya/nt]")
 
 BOOL_LOGARITHMIC_SCALE = True
 if BOOL_LOGARITHMIC_SCALE:
 	ax = plt.gca()
-	plt.xlabel('<L> [nt]')
+	plt.xlabel('l [nt]')
 	plt.xscale('log')
 	#plt.minorticks_on
 	ax.xaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
