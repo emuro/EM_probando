@@ -17,7 +17,7 @@ def Tau(l):
 
 
 start = 554
-step  = 500
+step  = 10
 end   = 68000  #human
 count = int (end/step) + 1
 stop  = start + (step*count)

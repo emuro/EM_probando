@@ -94,7 +94,6 @@ if False: #False:
 	print(df)
 
 
-
 # Tau(<L>) and observations
 obs_file = "/home/emuro/git/github/gene_length/main_tables/suppl_tables/gene_length_vs_divergence_time.tsv"
 df2 = pd.read_csv(obs_file, sep="\t", comment='#')
